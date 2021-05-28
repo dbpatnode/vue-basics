@@ -13,6 +13,15 @@
         <!-- when calling methods make sure to  invoke ()-->
         <p>created by {{fullName()}}</p>
         <p> {{message}}</p>
+
+        <hr />
+        <!-- v-model grabs the corresponding value in the data object from app.js -->
+        <label> First Name:</label>
+        <input type="text" v-model="firstName" />
+
+        <label> Last Name:</label>
+        <input type="text" v-model="lastName" />
+
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
