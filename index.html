@@ -7,21 +7,13 @@
 </head>
 
 <body>
-
-    <div id="app1">
-        <!-- <h3> First Vue App </h3> -->
+    <!-- v-cloak hides the function thats running in the background (check CSS)-->
+    <div id="app1" v-cloak>
         <h1> {{header}}</h1>
-        <!-- when calling methods make sure to  invoke-->
+        <!-- when calling methods make sure to  invoke ()-->
         <p>created by {{fullName()}}</p>
         <p> {{message}}</p>
     </div>
-
-    <!-- <div id="app2">
-       <h3> First Vue App </h3> 
-        <h1> {{header}}</h1>
-        <p>created by {{firstName}} {{lastName}}</p>
-        <p> {{message}}</p>
-    </div> -->
 
     <script src="https://unpkg.com/vue@next"></script>
     <script src="app.js"></script>
