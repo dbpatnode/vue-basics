@@ -1,4 +1,5 @@
-Vue.createApp({
+// vm is short for view model
+const vm = Vue.createApp({
     data() {
         return {
             header: 'First Vue Instance',
@@ -6,8 +7,20 @@ Vue.createApp({
             lastName: 'Patnode',
             message: 'this has an id of app1.'
         }
+    },
+    methods: {
+        fullName() {
+            return `${this.firstName} ${this.lastName}`
+        }
     }
 }).mount('#app1')
+
+
+// we dont need use vm.data.firstName (because proxying)
+// this waits for two seconds before changing firtName Value.
+// setTimeout(() => {
+//     vm.firstName = 'NEW NAME!!!'
+// }, 2000)
 
 // Vue.createApp({
 //     data() {
