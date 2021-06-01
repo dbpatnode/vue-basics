@@ -13,6 +13,11 @@
         <!-- when calling methods make sure to  invoke ()-->
         <p>created by {{fullName()}}</p>
         <p> {{message}}</p>
+        <!-- v-bind makes it so we can utlize the url within quotations -->
+        <!-- note you dont have to wrap myUrl in {{}} -->
+        <p><a v-bind:href="myUrl" target="-blank">Daniel Googled</a></p>
+        <!-- you can eliminate v-bind altogether and just use : -->
+        <p><a :href="myUrl" target="-blank">Daniel Googled(using shortened syntax)</a></p>
 
         <hr />
         <!-- v-model grabs the corresponding value in the data object from app.js -->
