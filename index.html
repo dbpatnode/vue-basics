@@ -28,15 +28,48 @@
         <!-- we probably want to not do this due to cross site scripting -->
         <!-- people can change the url thats used taking users to malicious sites -->
         <p v-html="rawURL" target="-blank"></p>
+
         <hr />
-        <!-- V-MODEL DIRECTIVE-->
+
+        <!-- UTILIZING EVENT LISTENERS V-ON DIRECTIVE -->
+        <p>I am {{age}} years old.</p>
+        <!-- we can incriment/decrement in two ways -->
+        <!-- 1) by doing it inline-->
+        <!-- <button v-on:click="age++">Increase Age</button> -->
+        <!--2) by calling a method from the dataModel -->
+        <!-- <button v-on:click="increaseAge">Increase Age</button> -->
+        <!-- v-on: can be abriviated to the @ symbol like so -->
+        <!-- <button @click="age++">increase age</button> -->
+        <button @click="increaseAge">increase age</button>
+
+
+
+        <!-- same for these ones (they all do the same thing) -->
+        <!-- <button v-on:click="age--">Decrease Age</button> -->
+        <!-- <button v-on:click="decreaseAge">Decrease Age</button> -->
+        <!-- <button @click="age--">Decrease Age</button> -->
+        <button @click="decreaseAge">Decrease Age</button>
+        <br />
+
+        <!-- V-MODEL DIRECTIVE -->
         <!-- v-model grabs the corresponding value in the data object from app.js -->
+        <!-- this wont actually update the data... -->
         <label> First Name:</label>
         <input type="text" v-model="firstName" />
 
         <label> Last Name:</label>
         <input type="text" v-model="lastName" />
 
+        <!-- this acheives the same thing as using V-Bind and V-on with each other like so: -->
+        <!-- when possible we should us v-model (because its less code) -->
+        <!-- the @input is in the methods -->
+        <label> First Name:</label>
+        <input type="text" :value="firstName" @input="updateFirstName" />
+
+        <label> Last Name:</label>
+        <input type="text" :value="lastName" @input="updateLastName" />
+
+        <br />
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>
