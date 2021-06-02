@@ -34,6 +34,11 @@
 
         <!-- UTILIZING EVENT LISTENERS V-ON DIRECTIVE -->
         <p>I am {{age}} years old.</p>
+
+        <!-- if working with numbers well want to specify its a number in the type and by calling .number on the vmodel -->
+        <label>Age</label>
+        <input type="number" v-model.number="age" />
+        <br />
         <!-- we can incriment/decrement in two ways -->
         <!-- 1) by doing it inline-->
         <!-- <button v-on:click="age++">Increase Age</button> -->
@@ -53,14 +58,21 @@
         <!-- V-MODEL DIRECTIVE -->
         <!-- v-model grabs the corresponding value in the data object from app.js -->
         <!-- this wont actually update the data... -->
+
+
         <label> First Name:</label>
-        <input type="text" v-model="firstName" />
+        <input type="text" v-model.lazy.trim="firstName" />
+        <!-- .LAZY and .TRIM  -->
+        <!-- .lazy only updates the page when the user clicks away from the input field -->
+        <!-- .trim takes off the white space -->
 
         <label> MiddleName</label>
         <input type="text" @keyup.enter="updateMiddleName" />
 
         <label> Last Name:</label>
         <input type="text" v-model="lastName" />
+
+
 
         <!-- this acheives the same thing as using V-Bind and V-on with each other like so: -->
         <!-- when possible we should us v-model (because its less code) -->
