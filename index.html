@@ -42,8 +42,6 @@
         <!-- <button @click="age++">increase age</button> -->
         <button @click="increaseAge">increase age</button>
 
-
-
         <!-- same for these ones (they all do the same thing) -->
         <!-- <button v-on:click="age--">Decrease Age</button> -->
         <!-- <button v-on:click="decreaseAge">Decrease Age</button> -->
@@ -70,6 +68,12 @@
         <input type="text" :value="lastName" @input="updateLastName" />
 
         <br />
+
+        <!-- PASSING DATA WITH EVENTS -->
+        <!-- in order to pass the event we need to include $event, not $e -->
+        <label>Favorite Food</label>
+        <input type: text :value="favoriteFood" @input="updateFavoriteFood('Favorite food Event Triggered!', $event)" />
+
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>

@@ -8,7 +8,8 @@ const vm = Vue.createApp({
             message: 'this has an id of app1.',
             myUrl: 'https://www.google.com/search?q=daniel+patnode&safe=off&rlz=1C5CHFA_enUS726US727&ei=Vbm2YPWMMY2A3_QPu8yqoAQ&oq=Daniel+patnode&gs_lcp=Cgdnd3Mtd2l6EAEYADICCAAyBggAEBYQHjIGCAAQFhAeOgcIABBHELADOgcIABCwAxBDOgUIABCxAzoLCC4QsQMQxwEQowI6CAgAELEDEIMBOgoIABCxAxCDARBDOgQIABBDOgoILhCxAxCDARBDOgQILhBDOhAILhCxAxCDARDHARCjAhBDOgIILjoFCC4QsQM6CAguELEDEIMBOgcILhCxAxBDOggILhDHARCjAjoKCC4QsQMQQxCTAjoLCC4QsQMQgwEQkwI6CAguELEDEJMCOggIABAWEAoQHlDiEliYIWD7LGgBcAJ4AYABxwOIAdUgkgEJMC4yLjcuNC4xmAEAoAEBqgEHZ3dzLXdpesgBCcABAQ&sclient=gws-wiz',
             rawURL: '<a href="https://www.w3schools.com">Visit W3Schools</a>',
-            age: 30
+            age: 30,
+            favoriteFood: 'Pizza'
         }
     },
     methods: {
@@ -28,5 +29,10 @@ const vm = Vue.createApp({
         updateFirstName(e) {
             this.firstName = e.target.value
         },
+        updateFavoriteFood(message, e) {
+            e.preventDefault()
+            this.favoriteFood = e.target.value
+            console.log(message)
+        }
     }
 }).mount('#app1')
