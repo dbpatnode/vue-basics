@@ -56,17 +56,22 @@
         <label> First Name:</label>
         <input type="text" v-model="firstName" />
 
+        <label> MiddleName</label>
+        <input type="text" @keyup.enter="updateMiddleName" />
+
         <label> Last Name:</label>
         <input type="text" v-model="lastName" />
 
         <!-- this acheives the same thing as using V-Bind and V-on with each other like so: -->
         <!-- when possible we should us v-model (because its less code) -->
         <!-- the @input is in the methods -->
-        <label> First Name:</label>
+
+
+        <!-- <label> First Name:</label>
         <input type="text" :value="firstName" @input="updateFirstName" />
 
         <label> Last Name:</label>
-        <input type="text" :value="lastName" @input="updateLastName" />
+        <input type="text" :value="lastName" @input="updateLastName" /> -->
 
         <br />
 
