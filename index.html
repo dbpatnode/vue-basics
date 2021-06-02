@@ -16,6 +16,7 @@
         <!-- when calling methods make sure to  invoke ()-->
         <p>created by {{fullName()}}</p>
         <p> {{message}}</p>
+        <p> my favorite food is {{favoriteFood}} and favorite color is {{favoriteColor}}</p>
 
         <!-- V-BIND DIRECTIVE-->
         <!-- v-bind makes it so we can utlize the url within quotations -->
@@ -71,8 +72,15 @@
 
         <!-- PASSING DATA WITH EVENTS -->
         <!-- in order to pass the event we need to include $event, not $e -->
-        <label>Favorite Food</label>
-        <input type: text :value="favoriteFood" @input="updateFavoriteFood('Favorite food Event Triggered!', $event)" />
+        <label>Favorite Food:</label>
+        <input type="text" :value="favoriteFood"
+            @input="updateFavoriteFood('Favorite food Event Triggered!', $event)" />
+
+        <!-- we can take out the need to use prevent default by using the modifier .prevent after the @event -->
+        <!-- this makes it so we dont have to call prevent default in the method -->
+        <label>Favorite Color:</label>
+        <input type="text" :value=favoriteColor
+            @input.prevent="updatFavoriteColorWithoutPreventDefault('This is the message', $event)" />
 
     </div>
 
