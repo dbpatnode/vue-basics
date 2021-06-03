@@ -14,17 +14,17 @@ const vm = Vue.createApp({
             favoriteColor: 'Blue'
         }
     },
+    // METHODS //
     methods: {
         // when using methods use this.whateveryourchanging
-        fullName() {
-            return `${this.firstName} ${this.middleName} ${this.lastName}`
-        },
+ 
         increaseAge() {
             return this.age++;
         },
         decreaseAge() {
             return this.age--;
         },
+
         updateLastName(e) {
             this.lastName = e.target.value
         },
@@ -34,14 +34,24 @@ const vm = Vue.createApp({
         updateFavoriteFood(message, e) {
             e.preventDefault()
             this.favoriteFood = e.target.value
-            console.log(message)
+            // console.log(message)
         },
         updatFavoriteColorWithoutPreventDefault(message, e) {
             this.favoriteColor = e.target.value
-            console.log(message)
+            // console.log(message)
         },
         updateMiddleName(e) {
             this.middleName = e.target.value
         }
+    },
+    // COMPUTED PROPERTIES //
+    computed: {
+        // this is only ran once compared to in the method where its called every time.
+        // this is a computed property because it takes several different data points and adds them together
+        fullName() {
+            console.log('fullname computed property  was called')
+            return `${this.firstName} ${this.middleName} ${this.lastName}`
+        },
+
     }
 }).mount('#app1')
