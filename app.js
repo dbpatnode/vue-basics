@@ -52,6 +52,15 @@ const vm = Vue.createApp({
             console.log('fullname computed property  was called')
             return `${this.firstName} ${this.middleName} ${this.lastName}`
         },
-
+    },
+    // WATCHERS //
+    watch: {
+        // used whenever you want something to happen on change of data
+        // watchers arent expected to be async while computed properties are
+        age(newVal, oldVal) {
+            setTimeout(() => {
+                this.age = 20
+            }, 3000)
+        }
     }
 }).mount('#app1')
